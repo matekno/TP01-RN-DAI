@@ -1,12 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
-import TP01 from './components/TP01';
 
-export default function App() {
+export default function TP01() {
+  const [text, onChangeText] = useState('')
   return (
-    <TP01 />
-  )
+    <View style={styles.main}>
+      <View style={[styles.container, { flexDirection: "column" }]}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeText}
+          value={text}
+          placeholder={"Ingrese su texto"}
+        />
+        <Button
+          style={styles.button}
+          title='Polshu, tocame!'
+          color="#f185dd"
+          onPress={() => Alert.alert("ola polshu esta es mi primera pagina web")}>
+        </Button>
+        <View style={styles.lineStyle} />
+      
+        <View style={styles.respuesta}>
+          <Text>{text}</Text>
+          <Text>{text.length}</Text>
+        </View>
+        <StatusBar s-tyle="auto" />
+      </View>
+    </View>
+
+  );
 }
 
 const styles = StyleSheet.create({
