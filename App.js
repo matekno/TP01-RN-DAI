@@ -2,10 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput, Alert } from 'react-native';
 import TP01 from './components/TP01';
+import LearningAxios from './components/LearningAxios';
 
 export default function App() {
   return (
-    <TP01 />
+    // <TP01 />
+    <LearningAxios />
   )
 }
 
